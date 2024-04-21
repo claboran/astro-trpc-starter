@@ -5,7 +5,7 @@ import {httpBatchLink} from "@trpc/client";
 import superjson from "superjson";
 import Greeting from "./Greeting.tsx";
 
-const GreetingWrapper = () => {
+const TrpcProviderWrapper = () => {
     const [queryClient] = useState(() => new QueryClient());
     const [trpcClient] = useState(() => trpcReactClient.createClient({
         links: [
@@ -26,4 +26,4 @@ const GreetingWrapper = () => {
       </trpcReactClient.Provider>
     );
 };
-export default GreetingWrapper;
+export default TrpcProviderWrapper;

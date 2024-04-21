@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
+import TrpcProviderWrapper from '../components/TrpcProviderWrapper';
 ---
 
 <Layout title="Welcome to Astro.">
@@ -60,6 +61,12 @@ import Card from '../components/Card.astro';
 				body="Come say hi to our amazing Discord community. ❤️"
 			/>
 		</ul>
+		<div class="text-white">
+			Greeting from the server:
+			<div id="greetingDiv"></div>
+		</div>
+		<TrpcProviderWrapper client:only="react">
+		</TrpcProviderWrapper>
 	</main>
 </Layout>
 
@@ -121,3 +128,13 @@ import Card from '../components/Card.astro';
 		padding: 0;
 	}
 </style>
+<script>
+
+	import {trpcAstroClient} from "../client";
+
+	const greets = await trpcAstroClient.greeting.query();
+	const greetingDiv = document.getElementById('greetingDiv');
+	if (greetingDiv) {
+		greetingDiv.innerHTML = greets?.hello;
+	}
+</script>

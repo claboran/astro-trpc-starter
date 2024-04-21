@@ -10,8 +10,22 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^4.6.3",
     "@astrojs/check": "^0.5.10",
+    "@astrojs/node": "^8.2.5",
+    "@astrojs/react": "^3.3.0",
+    "@tanstack/react-query": "^5.29.2",
+    "@trpc/client": "^11.0.0-rc.347",
+    "@trpc/react-query": "^11.0.0-rc.347",
+    "@trpc/server": "^11.0.0-rc.347",
+    "@types/react": "^18.2.79",
+    "@types/react-dom": "^18.2.25",
+    "astro": "^4.6.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "superjson": "^2.2.1",
     "typescript": "^5.4.5"
+  },
+  "devDependencies": {
+    "daisyui": "^4.10.2"
   }
 }
